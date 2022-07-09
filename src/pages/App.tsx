@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { CardTask } from '../components/CardTask';
 import { Empty } from '../components/Empty';
 import { Header } from '../components/Header';
 import styles from '../styles/pages/app.module.css';
@@ -19,20 +20,24 @@ function App() {
         <section className={styles.info}>
           <aside className={styles.infoTask}>
             <span>Tarefas criadas</span>
-            <div className="circle">
+            <div className={styles.circle}>
               <span>0</span>
             </div>
           </aside>
 
           <aside className={styles.infoTask}>
             <span>Concluídas</span>
-            <div className="circle">
-              <span>0</span>
+            <div>
+              <span className={styles.counter}>2 de 5</span>
             </div>
           </aside>
         </section>
 
-        <Empty /> 
+        {!tasks.length && <Empty />}
+        
+        <div className={styles.listTasks}>
+          {tasks.map(task => <CardTask key={task.id} task={task}/>)} 
+        </div>
       </main>
     </div>
   )

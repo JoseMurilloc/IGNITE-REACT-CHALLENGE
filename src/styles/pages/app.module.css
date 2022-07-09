@@ -25,8 +25,7 @@
 }
 
 
-.infoTask div {
-
+.circle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,3 +43,22 @@
   line-height: 1.7rem;
   color: #4EA8DE;
 } 
+
+.counter {
+  width: 3.6rem;
+  height: 1.9rem;
+  background: #333333;
+  color: #fff;
+  padding: 0.2rem 0.8rem;
+  border-radius: 1rem;
+}
+
+.counter, .circle {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.listTasks {
+  margin-top: 2.4rem;
+}
