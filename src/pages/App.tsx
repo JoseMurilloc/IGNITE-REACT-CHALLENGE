@@ -1,7 +1,17 @@
+import { useState } from 'react';
+import { Empty } from '../components/Empty';
 import { Header } from '../components/Header';
 import styles from '../styles/pages/app.module.css';
 
+type Task = {
+  id: number;
+  complete: boolean;
+  title: string;
+}
+
 function App() {
+  const [tasks, setTasks] = useState<Task[]>([]);
+
   return (
     <div className={styles.container}>
       <Header />
@@ -21,6 +31,8 @@ function App() {
             </div>
           </aside>
         </section>
+
+        <Empty /> 
       </main>
     </div>
   )
