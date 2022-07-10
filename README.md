@@ -6,13 +6,14 @@
 ## 👀✨ Preview
 <img src="https://i.ibb.co/1QNk1YB/todo-no-list.png">
 
-## 🧑🏻‍💻 Tecnolgoias
+## 🧑🏻‍💻 Tecnologias
 
-- ✨ React
-- ✨ Typescript
-- ✨ Vite
-- ✨ Jest
-- 
+- [x] React
+- [x] Typescript
+- [x] Vite
+- [x] Phosphor
+- [ ] Jest
+
 ## 👨‍💻 Iniciar o projeto na sua maquina
 ```bash
 $git clone https://github.com/JoseMurilloc/todo-react
