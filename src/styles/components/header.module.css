@@ -28,6 +28,11 @@
   background: #262626;
   border: 1px solid #0D0D0D;
   color: whitesmoke;
+
+}
+.inputSearch:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px #8284fa;
 }
 
 
