@@ -67,8 +67,9 @@
 .contentInput button:disabled {
   background-color: #9FD0ED;
   color: #1C6793;
+  cursor: not-allowed;
 }
 
-.contentInput button:hover {
+.contentInput button:hover:not([disabled]) {
   filter: brightness(120%);
 }
