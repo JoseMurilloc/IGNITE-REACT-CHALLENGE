@@ -18,6 +18,30 @@
   gap: 0.8rem;
 }
 
+
+.inputSearch {
+  width: 63.8rem;
+  height: 5.4rem;
+
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+  background: #262626;
+  border: 1px solid #0D0D0D;
+  color: whitesmoke;
+}
+
+
+.inputSearchError {
+  width: 63.8rem;
+  height: 5.4rem;
+
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+  background: #563636;
+  border: 1px solid #cb4848;
+  color: whitesmoke;
+}
+
 .contentInput button {
   border: none;
   background-color: #1E6F9F;
@@ -41,21 +65,10 @@
 }
 
 .contentInput button:disabled {
-  background-color: #e5e5e5;
-  color: #bfbfbf;
+  background-color: #9FD0ED;
+  color: #1C6793;
 }
 
 .contentInput button:hover {
   filter: brightness(120%);
-}
-
-.inputSearch {
-  width: 63.8rem;
-  height: 5.4rem;
-
-  padding: 1.6rem;
-  border-radius: 0.8rem;
-  background: #262626;
-  border: 1px solid #0D0D0D;
-  color: whitesmoke;
 }
