@@ -1,52 +1,51 @@
-import styles from '../styles/components/cardTask.module.css';
-import { Trash, Circle, CheckCircle } from 'phosphor-react';
-import { TaskService } from '../services/task';
-import { Task } from '../pages/App';
-
+import styles from '../styles/components/cardTask.module.css'
+import { Trash, Circle, CheckCircle } from 'phosphor-react'
+import { TaskService } from '../services/task'
+import { Task } from '../pages/App'
+import { Dispatch, SetStateAction } from 'react'
 
 type Props = {
-  task: Task;
-  onTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+  task: Task
+  onTasks: Dispatch<SetStateAction<Task[]>>
 }
 
-export function CardTask ({task, onTasks}: Props) {
-
+export function CardTask({ task, onTasks }: Props) {
   const handleDeleteTask = async (taskId: number) => {
-    const {status} = await TaskService.deleteTask(taskId);
+    const { status } = await TaskService.deleteTask(taskId)
 
     if (!status) {
-      return;
+      return
     }
 
-    onTasks((oldTasks: Task[]) => oldTasks.filter(task => task.id !== taskId))
+    onTasks((oldTasks: Task[]) => oldTasks.filter((task) => task.id !== taskId))
   }
 
   const handleCompleteTask = async (taskId: number) => {
-    const {status, updatedTask} = await TaskService.completeTask(taskId, task.complete);
+    const { status, updatedTask } = await TaskService.completeTask(
+      taskId,
+      task.complete,
+    )
 
     if (!status) {
-      return;
+      return
     }
 
-    onTasks((oldTasks: Task[]) => oldTasks.map(task => 
-        task.id === taskId ?
-          updatedTask : task
-    ))
+    onTasks((oldTasks: Task[]) =>
+      oldTasks.map((task) => (task.id === taskId ? updatedTask : task)),
+    )
   }
 
   return (
     <div className={styles.container}>
-      {task.complete 
-        ? (
-          <button onClick={() => handleCompleteTask(task.id)}>
-            <CheckCircle color="#4EA8DE" size={20} />
-          </button>
-        ) 
-        : (
-          <button onClick={() => handleCompleteTask(task.id)}>
-            <Circle color="#4EA8DE" size={20} />
-          </button>
-        )}
+      {task.complete ? (
+        <button onClick={() => handleCompleteTask(task.id)}>
+          <CheckCircle color="#4EA8DE" size={20} />
+        </button>
+      ) : (
+        <button onClick={() => handleCompleteTask(task.id)}>
+          <Circle color="#4EA8DE" size={20} />
+        </button>
+      )}
       <div>
         <span>{task.title}</span>
       </div>
