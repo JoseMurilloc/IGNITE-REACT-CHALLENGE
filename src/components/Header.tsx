@@ -12,9 +12,16 @@ type Props = {
 export function Header({onTasks}: Props) {
   const [title, setTitle] = useState('')
   const [isSubmit, setIsSubmit] = useState(false)
+  const [error, setError] = useState('')
+  
   
   const handleCreateNewTask = async () => {
+    if(!title) {
+      setError('Campo obrigatório')
+      return;
+    }
     setIsSubmit(true)
+    setError('')
     const {status, newTask} = await TaskService.createNewTask(title)
 
     if (!status) {
@@ -26,17 +33,16 @@ export function Header({onTasks}: Props) {
     setIsSubmit(false)
   }
 
-
-
-  
   return (
     <header className={styles.container}>
       <img src={logoImage} alt="Logo da aplicação todo" />  
       <div className={styles.contentInput}>
         <input 
-          className={styles.inputSearch} 
+          className={!error ? styles.inputSearch : styles.inputSearchError} 
           type="text" 
-          placeholder="Adicionar uma nova tarefa"
+          placeholder={
+            !error ? 'Adicionar uma nova tarefa' : error
+          }
           onChange={e => setTitle(e.target.value)}
           value={title}
         />
@@ -46,7 +52,7 @@ export function Header({onTasks}: Props) {
         >
           Criar
           <PlusCircle 
-            color={isSubmit ? '#bfbfbf' : '#ffffff'} 
+            color={isSubmit ? '#1C6793' : '#ffffff'} 
             size={20} 
           />
         </button>
