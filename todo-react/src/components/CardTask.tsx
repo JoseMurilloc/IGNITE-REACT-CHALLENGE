@@ -39,18 +39,18 @@ export function CardTask({ task, onTasks }: Props) {
     <div className={styles.container}>
       {task.complete ? (
         <button onClick={() => handleCompleteTask(task.id)}>
-          <CheckCircle color="#4EA8DE" size={20} />
+          <CheckCircle color="#4EA8DE" size="2rem" />
         </button>
       ) : (
         <button onClick={() => handleCompleteTask(task.id)}>
-          <Circle color="#4EA8DE" size={20} />
+          <Circle color="#4EA8DE" size="2rem" />
         </button>
       )}
       <div>
         <span>{task.title}</span>
       </div>
       <button onClick={() => handleDeleteTask(task.id)}>
-        <Trash color="#808080" size={20} />
+        <Trash color="#808080" size="2rem" />
       </button>
     </div>
   )
