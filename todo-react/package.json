@@ -7,6 +7,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "jest",
+    "test:watch": "jest --watchAll",
     "lint": "eslint src --ext .tsx,.ts --fix"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^28.1.4",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",

@@ -45,7 +45,7 @@ export function Header({ onTasks }: Props) {
         />
         <button onClick={handleCreateNewTask} disabled={isSubmit}>
           Criar
-          <PlusCircle color={isSubmit ? '#1C6793' : '#ffffff'} size={20} />
+          <PlusCircle color={isSubmit ? '#1C6793' : '#ffffff'} size="2rem" />
         </button>
       </div>
     </header>
