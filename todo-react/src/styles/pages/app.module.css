@@ -25,6 +25,18 @@
   gap: 0.8rem;
 }
 
+.loader {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.loader h2 {
+  margin-left: 10px; 
+}
+
 
 .circle {
   display: flex;

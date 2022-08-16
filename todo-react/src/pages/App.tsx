@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { Spinner } from 'phosphor-react'
+import { useEffect, useMemo, useState } from 'react'
 import { CardTask } from '../components/CardTask'
 import { Empty } from '../components/Empty'
 import { Header } from '../components/Header'
@@ -13,21 +14,41 @@ export type Task = {
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     fetchingAllTasks()
   }, [])
 
-  const tasksComplete = tasks.filter((task) => task.complete).length
+  const tasksComplete = useMemo(
+    () => tasks.filter((task) => task.complete).length,
+    [tasks],
+  )
 
   const fetchingAllTasks = async () => {
+    setLoading(true)
     const response = await TaskService.getTasks()
 
     if (!response.status) {
+      setLoading(false)
       return
     }
 
     setTasks(response.tasks)
+    setLoading(false)
+  }
+
+  if (loading) {
+    return (
+      <div className={styles.container}>
+        <Header onTasks={setTasks} />
+
+        <section className={styles.loader}>
+          <Spinner color="#89adc3" size="2rem" />
+          <h2>Carregando seus todos...</h2>
+        </section>
+      </div>
+    )
   }
 
   return (
@@ -52,7 +73,7 @@ function App() {
           </aside>
         </section>
 
-        {!tasks.length && <Empty />}
+        {!tasks.length && !loading && <Empty />}
 
         <div className={styles.listTasks}>
           {tasks.map((task) => (
