@@ -1,0 +1,105 @@
+.container {}
+
+.intro {
+  background-image: url('../../assets/backgroundIntro.svg');
+  background-size: cover;
+  height: calc(100vh - 10.1rem);
+  width: 100vw;
+  padding: 9.4rem 16rem;
+
+  display: flex;
+  justify-content: space-between;
+  overflow-y: hidden;
+}
+.intro img {
+  width: 47.6rem;
+}
+
+.contentIntro .title {
+  max-width: 58.8rem;
+}
+.title h1 {
+  margin-bottom: 1.6rem;
+}
+
+.title h1 {
+  font-weight: 800;
+  font-size: 4.8rem;
+  line-height: 130%;
+  color: #272221;
+}
+
+.title p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 130%;
+  color: #403937;
+  font-stretch: 100;
+}
+
+.itens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 2rem;
+  margin-top: 6.6rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  font-family: 'Roboto';
+  font-size: 1.4rem;
+  line-height: 130%;
+
+  color: #574F4D;
+}
+
+.item .circleIcon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 1.6rem;
+  padding: 0.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circleCart {
+  background-color: #C47F17;
+}
+
+.circlePackage {
+  background-color: #574f4d;
+}
+
+.circleTimer {
+ background: #DBAC2C;;
+}
+
+
+.circleCoffee {
+  background: #8047F8;
+}
+
+.listCoffees {
+  padding: 3.2rem 16rem; 
+}
+
+.listCoffees .coffees {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3.2rem;
+}
+
+.listCoffees .titleListCoffee {
+  font-weight: 800;
+  font-size: 3.2rem;
+  line-height: 130%;
+  color: #403937;
+  margin-bottom: 5.4rem;
+}

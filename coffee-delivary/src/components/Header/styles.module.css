@@ -1,0 +1,60 @@
+.containerHeader {
+  padding: 3.2rem 16rem; 
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content img {
+  width: 8.4rem;
+}
+
+
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.actions .actionLocalization {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background: #EBE5F9;
+  border-radius: 0.6rem;
+  padding: 0.8rem;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 130%;
+  color: #4B2995;
+
+  transition: filter 200ms;
+}
+
+button:hover {
+  filter: brightness(98%);
+}
+
+
+.actionLocalization span {
+  margin-left: 0.4rem;
+}
+
+.actions .actionCart {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+
+  background: #F1E9C9;
+  border-radius: 0.6rem;
+}
