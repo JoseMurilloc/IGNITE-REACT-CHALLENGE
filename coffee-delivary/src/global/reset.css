@@ -1,12 +1,15 @@
 html {
   box-sizing: border-box;
+  background: #FAFAFA;
+  color: #272221;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Baloo 2', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
 
 input {
   font-size: 1.3rem;
