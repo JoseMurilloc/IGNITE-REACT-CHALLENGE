@@ -1,13 +1,15 @@
 import styles from './styles.module.css';
 import CoffeeCardImage from '../../assets/CoffeeCard.png'
 import { Minus, Plus, ShoppingCart } from 'phosphor-react';
+import { formatNumber } from '../../util/formatNumber';
 
 interface Props {
   coffee: {
     types: string[]
-    title?: string;
-    description?: string;
-    price?: string; 
+    title: string;
+    description: string;
+    price: number; 
+    image: string;
   }
 }
 
@@ -17,7 +19,7 @@ export function CardCoffee ({coffee}: Props) {
       <header>
         <img 
           className={styles.imageCoffee} 
-          src={CoffeeCardImage} 
+          src={coffee.image} 
           alt="card" 
         />
       </header>
@@ -36,7 +38,7 @@ export function CardCoffee ({coffee}: Props) {
       <footer>
         <div>R$ 
           <span className={styles.price}>
-            {` ${coffee.price}`}
+            {` ${formatNumber(coffee.price)}`}
           </span>
         </div>
         <div className={styles.actionsCart}>
