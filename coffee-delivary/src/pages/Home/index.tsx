@@ -1,11 +1,27 @@
 import styles from './styles.module.css'
 import CoffeeIntro from '../../assets/CoffeeIntro.png'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CardCoffee } from '../../components/CardCoffee'
+import { CoffeeService } from '../../services/Coffee'
 
 export function Home () {
-  const [coffees, setCoffees] = useState([{types:[ 'Tradicional', 'Com leite'], title: 'Expresso Tradicional', description: 'O tradicional café feito com água quente e grãos moídos', price: '100,99'}])
+  const [coffees, setCoffees] = useState([])
+
+  useEffect(() => {
+    loadCoffees()
+  }, [])
+
+  async function loadCoffees() {
+    const response = await CoffeeService.getCoffees()
+
+    if(!response.ok) {
+      return
+    }
+
+    setCoffees(response.coffees)
+  }
+
 
   return (
     <main className={styles.container}>
