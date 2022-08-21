@@ -17,7 +17,12 @@ function App() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    const mounted = true
     fetchingAllTasks()
+
+    return () => {
+      mounted: false
+    }
   }, [])
 
   const tasksComplete = useMemo(
