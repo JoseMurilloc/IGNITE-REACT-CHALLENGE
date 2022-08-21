@@ -1,0 +1,28 @@
+{
+  "coffees": [
+    {
+      "id": 1,
+      "title": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "types": ["Tradicional"],
+      "price": 9.90,
+      "image": "https://i.ibb.co/9TMxZvW/Coffee-2.png"
+    },
+    {
+      "id": 2,
+      "title": "Expresso Americano",
+      "description": "Expresso diluído, menos intenso que o tradicional",
+      "types": ["Tradicional"],
+      "price": 9.90,
+      "image": "https://i.ibb.co/Vtgj3Bm/Coffee.png"
+    },
+    {
+      "id": 3,
+      "title": "Expresso Cremoso",
+      "description": "Café expresso tradicional com espuma cremosa",
+      "types": ["Tradicional"],
+      "price": 9.90,
+      "image": "https://i.ibb.co/1JgSvDM/Coffee-1.png"
+    }
+  ]
+}
