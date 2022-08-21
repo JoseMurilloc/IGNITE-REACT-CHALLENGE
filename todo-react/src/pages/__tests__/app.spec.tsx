@@ -1,10 +1,21 @@
-import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { cleanup, render, screen, waitFor } from '@testing-library/react'
 import App from '../App'
+import nock from 'nock'
 
 describe('<App />', () => {
-  it('Render component correctly', () => {
+  it('should be have show message that loading todo', async () => {
     render(<App />)
-    expect(1 + 1).toEqual(2)
+
+    expect(screen.getByText('Carregando seus todos...')).toBeInTheDocument()
+    cleanup()
+  })
+
+  it('should show tasks of todo on listing', async () => {
+    render(<App />)
+    nock('http://localhost:3333').get('/tasks').reply(200, [])
+    await waitFor(() => {
+      expect(screen.getByTestId('message-empty')).toBeInTheDocument()
+    })
+    cleanup()
   })
 })
