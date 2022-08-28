@@ -49,6 +49,7 @@ button:hover {
 }
 
 .actions .actionCart {
+  position: relative;
   border: none;
   display: flex;
   justify-content: center;
@@ -57,4 +58,24 @@ button:hover {
 
   background: #F1E9C9;
   border-radius: 0.6rem;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 2rem;
+  height: 2rem;
+  background: #c47f17;
+  border-radius: 1rem;
+
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 130%;
+  letter-spacing: -0.06em;
+  color: #FFFFFF;
 }
