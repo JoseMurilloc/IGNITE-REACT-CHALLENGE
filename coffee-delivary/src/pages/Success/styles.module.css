@@ -1,0 +1,117 @@
+.containerSuccess {
+  height: calc(100vh - 11rem);
+  width: 100vw;
+  padding: 9.4rem 16rem;
+
+  display: flex;
+  justify-content: space-between;
+  overflow-y: hidden;
+}
+
+.containerSuccess main {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h1 {
+  font-weight: 800;
+  font-size: 3.2rem;
+  line-height: 130%;
+  color: #C47F17;
+  margin-bottom: 0.4rem;
+}
+
+.content .subtitle {
+  font-family: 'Roboto';
+  font-size: 2rem;
+  line-height: 130%;
+  color: #403937;
+  margin-bottom: 4rem;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding: 4rem;
+  gap: 3.2rem;
+  border-radius: 0.6rem 3.6rem;
+  border: 1px solid;
+  border-color: transparent;
+}
+
+.infos:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    border-radius: inherit;
+    border-image-source: linear-gradient(102.89deg, #DBAC2C 2.61%, #8047F8 98.76%);
+    background: linear-gradient(102.89deg, #DBAC2C 2.61%, #8047F8 98.76%);
+    border-radius: 0.6rem 3.6rem;
+    border: 1px solid;
+    border-color: transparent;
+}
+
+
+
+.infos aside  {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.circleIcon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 1.6rem;
+  padding: 0.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoText {
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 130%;
+  color: #574F4D;
+}
+
+.infos aside:first-child span {
+  max-width: 31rem;
+}
+
+
+.infos aside:nth-child(2) span {
+  width: 14.1rem;
+}
+
+.infos aside:last-child span {
+  width: 14.1rem;
+}
+
+.illustration {
+  width: 49.2rem;
+}
+
+.circleMaPin {
+  background-color: #7f47f8;
+}
+
+.circleTimer {
+  background-color: #DBAC2C;
+}
+
+.circleDollar {
+  background-color: #c47f17;
+}
