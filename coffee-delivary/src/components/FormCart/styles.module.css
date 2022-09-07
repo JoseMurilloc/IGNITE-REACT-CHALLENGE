@@ -20,6 +20,7 @@ header .contentHeader {
   display: flex;
   flex-direction: column;
 }
+
 header .contentHeader span {
   font-family: 'Roboto';
   font-size: 1.4rem;
@@ -31,6 +32,16 @@ header .contentHeader span + span {
   color: #574F4D;
 }
 
+.containerInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.containerInputs div {
+  display: flex;
+  gap: 1.2rem;
+}
 
 .paymentsContainer {
   display: flex;
