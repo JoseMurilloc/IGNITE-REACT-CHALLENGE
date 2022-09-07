@@ -1,0 +1,55 @@
+.contentInfoOfPurchase {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4rem;
+  gap: 3.2rem;
+
+  height: 37.2rem;
+  background: #F3F2F2;
+  border-radius: 0.6rem;
+}
+
+.contentInfoOfPurchase header {
+  display: flex;
+  gap: 0.4rem;
+}
+
+
+header .contentHeader {
+  display: flex;
+  flex-direction: column;
+}
+header .contentHeader span {
+  font-family: 'Roboto';
+  font-size: 1.4rem;
+  line-height: 130%;
+  color: #403937;
+}
+
+header .contentHeader span + span {
+  color: #574F4D;
+}
+
+
+.paymentsContainer {
+  display: flex;
+  gap: 1.2rem;
+}
+
+
+.formPaymentContainer {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3.2rem;
+  background: #F3F2F2;
+  border-radius: 0.6rem;
+}
+
+.formPaymentContainer header {
+  display: flex;
+}
+
+
