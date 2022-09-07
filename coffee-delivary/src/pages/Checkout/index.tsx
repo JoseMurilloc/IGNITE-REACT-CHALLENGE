@@ -5,11 +5,11 @@ import styles from './styles.module.css';
 
 export function Checkout () {
 
-  const newBuyForm = useForm()
-  const { handleSubmit } = newBuyForm
+  const newCartCoffeeForm = useForm()
+  const { handleSubmit, register } = newCartCoffeeForm
 
   async function handleConfirmPayment(data: any) {
-    console.log({data})
+    console.log(data)
   }
 
   return (
@@ -17,7 +17,7 @@ export function Checkout () {
       <form onSubmit={handleSubmit(handleConfirmPayment)}>
         <section className={styles.sectionInfoOfPurchase}>
           <h2>Complete seu pedido</h2>
-          <FormProvider {...newBuyForm}>
+          <FormProvider {...newCartCoffeeForm}>
             <FormCart />
           </FormProvider>
         </section>
