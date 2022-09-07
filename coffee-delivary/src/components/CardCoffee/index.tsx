@@ -13,6 +13,9 @@ interface Props {
 }
 
 export function CardCoffee ({coffee}: Props) {
+  function handleAddCoffeeInCart() {
+    console.log('Add in reducer context')
+  }
   return (
     <div className={styles.containerCardCoffee}>
       <header>
@@ -43,7 +46,7 @@ export function CardCoffee ({coffee}: Props) {
         <div className={styles.actionsCart}>
           <div className={styles.addonsCoffeeCart}>
             <button className={styles.buttonMinus}>
-            <Minus color="#8047F8" size="1.5rem" weight="fill"/>
+              <Minus color="#8047F8" size="1.5rem" weight="fill"/>
             </button>
             <aside className={styles.counter}>1</aside>
             <button className={styles.buttonPlus}>
@@ -51,7 +54,7 @@ export function CardCoffee ({coffee}: Props) {
             </button>
           </div>
 
-          <button className={styles.buttonCart}>
+          <button onClick={handleAddCoffeeInCart} className={styles.buttonCart}>
             <ShoppingCart color="#FFF" size="2.2rem" weight="fill" />
           </button>
         </div>
