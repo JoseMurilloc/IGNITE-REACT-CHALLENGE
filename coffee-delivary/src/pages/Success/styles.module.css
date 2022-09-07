@@ -17,7 +17,6 @@
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .content h1 {
@@ -44,23 +43,9 @@
   padding: 4rem;
   gap: 3.2rem;
   border-radius: 0.6rem 3.6rem;
-  border: 1px solid;
-  border-color: transparent;
+  border-radius: 0.6rem 3.6rem;
+  border: 1px solid #c47f17;
 }
-
-.infos:before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    z-index: -1;
-    border-radius: inherit;
-    border-image-source: linear-gradient(102.89deg, #DBAC2C 2.61%, #8047F8 98.76%);
-    background: linear-gradient(102.89deg, #DBAC2C 2.61%, #8047F8 98.76%);
-    border-radius: 0.6rem 3.6rem;
-    border: 1px solid;
-    border-color: transparent;
-}
-
 
 
 .infos aside  {

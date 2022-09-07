@@ -8,19 +8,26 @@ export function Success () {
       <main>
         <div className={styles.content}>
           <h1>Uhu! Pedido confirmado</h1>
-          <span className={styles.subtitle}>Agora é só aguardar que logo o café chegará até você</span>
+          <span className={styles.subtitle}>
+            Agora é só aguardar que logo o café chegará até você
+          </span>
           <section className={styles.infos}>
             <aside>
               <div className={`${styles.circleIcon} ${styles.circleMaPin}`}>
                   <MapPin color="#FFF" size="2.2rem" weight="fill" />
               </div>              
-              <span className={styles.infoText}>Entrega em Rua João Daniel Martinelli, 102 Farrapos - Porto Alegre, RS</span>
+              <span className={styles.infoText}>
+                Entrega em Rua João Daniel Martinelli, 102 Farrapos - Porto Alegre, RS
+              </span>
             </aside>
             <aside>
               <div className={`${styles.circleIcon} ${styles.circleTimer}`}>
                   <Timer color="#FFF" size="2.2rem" weight="fill" />
               </div>              
-              <span className={styles.infoText}>Previsão de entrega {`\n`} 20 min - 30 min </span>
+              <span className={styles.infoText}>
+                Previsão de entrega {`\n`} 
+                20 min - 30 min 
+              </span>
             </aside>
             <aside>
               <div className={`${styles.circleIcon} ${styles.circleDollar}`}>
