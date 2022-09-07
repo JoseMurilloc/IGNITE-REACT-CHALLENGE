@@ -17,7 +17,7 @@ export function Cart () {
           <span>R$ 33,20</span>
         </div>
       </footer>
-      <button>Confirmar Pedido</button>
+      <button type="submit">Confirmar Pedido</button>
     </div>
   )
 }
