@@ -1,12 +1,11 @@
 import { createContext, useContext, useReducer } from "react";
-import { Cart, CartContextData, CartContextProviderProps } from "./types";
+import { cartReducer } from "../../reducers/reducer";
+import { CartContextData, CartContextProviderProps } from "./types";
 
 const CartContext = createContext<CartContextData>({} as CartContextData)
 
 export function CartContextProvider({children}: CartContextProviderProps) {
-  const [cart, dispatch] = useReducer((state: Cart, action: any) => {
-    return state
-  }, {coffees: []})
+  const [cart, dispatch] = useReducer(cartReducer, {coffees: []})
 
   return (
     <CartContext.Provider value={{coffees: cart.coffees}}>
