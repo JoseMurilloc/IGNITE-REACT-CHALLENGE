@@ -4,6 +4,10 @@ html {
   color: #272221;
 }
 
+::selection {
+  background: #7f47f876;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
   font-family: 'Baloo 2', sans-serif;
