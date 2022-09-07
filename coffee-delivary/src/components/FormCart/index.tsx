@@ -1,5 +1,8 @@
-import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from 'phosphor-react';
+import { CurrencyDollar, MapPinLine, Money } from 'phosphor-react';
 import { useState } from 'react';
+import { useFormContext } from 'react-hook-form';
+import { Input } from '../Input';
+import { SelectControl } from '../SelectControl';
 import { SelectPaymentButton } from '../SelectPaymentButton';
 import styles from './styles.module.css';
 import { ListPayments, MethodsPayment } from './types';
@@ -12,6 +15,14 @@ const METHOD_PAYMENTS: ListPayments = [
 
 export function FormCart () {
   const [selectMethodPayment, setSelectMethodPayment] = useState<MethodsPayment>('credit')
+  const {setValue} = useFormContext()
+
+  const handleSelectTypePayment = (type: MethodsPayment) => {
+      setValue('paymentType', type)
+      setSelectMethodPayment(type)
+  }
+
+
   return (
     <>  
       <section className={styles.contentInfoOfPurchase}>
@@ -23,13 +34,21 @@ export function FormCart () {
           </div>
         </header>
         <div className={styles.containerInputs}>
-          <input type="text" placeholder="CEP" />
-          <input type="text" placeholder="Complemento" />
-          <input type="text" placeholder="Complemento" />
-          <input type="text" placeholder="Complemento" />
-          <input type="text" placeholder="Complemento" />
-          <input type="text" placeholder="Complemento" />
-          <input type="text" placeholder="Complemento" />
+          <div style={{width: 200}}>
+            <Input registerName="cep" type="number" placeholder="CEP" />
+          </div>
+          <div>
+            <Input registerName="street" type="text" placeholder="Rua" />
+          </div>
+          <div>
+            <Input registerName="number" type="text" placeholder="Número" />
+            <Input registerName="complement" type="text" placeholder="Complemento" />
+          </div>
+          <div>
+            <Input registerName="district" type="text" placeholder="Bairro" />
+            <Input registerName="city" type="text" placeholder="Cidade" />
+            <SelectControl registerName="uf" />
+          </div>
         </div>
       </section>
       <section className={styles.formPaymentContainer}>
@@ -43,15 +62,12 @@ export function FormCart () {
           </div>
         </header>
         <aside className={styles.paymentsContainer}>
-          {METHOD_PAYMENTS.map(payment => (
+          {METHOD_PAYMENTS.map(({type, label}) => (
             <SelectPaymentButton  
-              onClick={() => {
-                console.log(payment.type)
-                setSelectMethodPayment(payment.type)
-              }}
-              typePayment={payment.type} 
-              label={payment.label} 
-              selected={selectMethodPayment === payment.type}
+              onClick={() => handleSelectTypePayment(type)}
+              typePayment={type} 
+              label={label} 
+              selected={selectMethodPayment === type}
             />
           ))}
         </aside>
