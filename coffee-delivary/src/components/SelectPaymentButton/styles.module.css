@@ -1,0 +1,37 @@
+.containerSelectPaymentButton {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  width: 18.5rem;
+  height: 5.1rem;
+  padding: 1.6rem;
+
+  background: #E6E5E5;
+  border-radius: 0.6rem;
+  border: 1px solid #E6E5E5;
+
+  font-family: 'Roboto';
+  font-size: 1.2rem;
+  line-height: 160%;
+  text-transform: uppercase;
+  color: #574F4D;
+}
+
+.containerSelectPaymentButtonSelected {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  width: 18.5rem;
+  height: 5.1rem;
+  padding: 1.6rem;
+
+  background: #EBE5F9;
+  border-radius: 0.6rem;
+  border: 1px solid #8047F8;
+
+  font-family: 'Roboto';
+  font-size: 1.2rem;
+  line-height: 160%;
+  text-transform: uppercase;
+  color: #574F4D;
+}
