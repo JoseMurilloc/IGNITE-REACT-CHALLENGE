@@ -18,12 +18,6 @@
 
 @media(min-width: 1600px){
   html {
-    font-size: 81.5%;
-  }
-}
-
-@media(min-width: 2000px){
-  html {
-    font-size: 83%;
+    font-size: 68.5%;
   }
 }
