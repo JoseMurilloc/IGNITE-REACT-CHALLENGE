@@ -11,6 +11,13 @@
   justify-content: space-between;
   overflow-y: hidden;
 }
+
+@media (max-width: 1200px) {
+  .intro {
+    padding: 9.4rem 10rem;
+  }
+}
+
 .intro img {
   width: 47.6rem;
 }
@@ -94,6 +101,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 3.2rem;
+  
+}
+@media (max-width: 1000px) {
+  .listCoffees .coffees {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
 }
 
 .listCoffees .titleListCoffee {
