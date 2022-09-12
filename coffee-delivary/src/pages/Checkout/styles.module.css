@@ -1,5 +1,5 @@
 .containerCheckout {
-  padding: 3.2rem 16rem; 
+  padding: 3.2rem 16rem;
 }
 
 .containerCheckout form {
@@ -14,9 +14,16 @@
   width: 66rem;
 }
 
+.sectionCart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 66rem;
+}
+
 .sectionInfoOfPurchase h2 {
   font-weight: 700;
   font-size: 1.8rem;
   line-height: 130%;
   color: #403937;
-} 
+}

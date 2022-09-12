@@ -21,7 +21,7 @@ export function Checkout () {
             <FormCart />
           </FormProvider>
         </section>
-        <section>
+        <section className={styles.sectionCart}>
           <h2>Cafés selecionados</h2>
           <Cart />
         </section>
