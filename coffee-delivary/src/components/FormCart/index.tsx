@@ -35,18 +35,42 @@ export function FormCart () {
         </header>
         <div className={styles.containerInputs}>
           <div style={{width: 200}}>
-            <Input registerName="cep" type="number" placeholder="CEP" />
+            <Input 
+              registerName="cep" 
+              type="number" 
+              placeholder="CEP" 
+            />
           </div>
           <div>
-            <Input registerName="street" type="text" placeholder="Rua" />
+            <Input 
+              registerName="street" 
+              type="text" 
+              placeholder="Rua" 
+            />
           </div>
           <div>
-            <Input registerName="number" type="text" placeholder="Número" />
-            <Input registerName="complement" type="text" placeholder="Complemento" />
+            <Input 
+              registerName="number" 
+              type="text" 
+              placeholder="Número" 
+            />
+            <Input 
+              registerName="complement" 
+              type="text" 
+              placeholder="Complemento" 
+            />
           </div>
           <div>
-            <Input registerName="district" type="text" placeholder="Bairro" />
-            <Input registerName="city" type="text" placeholder="Cidade" />
+            <Input 
+              registerName="district" 
+              type="text" 
+              placeholder="Bairro" 
+            />
+            <Input 
+              registerName="city" 
+              type="text" 
+              placeholder="Cidade" 
+            />
             <SelectControl registerName="uf" />
           </div>
         </div>
