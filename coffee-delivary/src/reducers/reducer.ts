@@ -1,18 +1,8 @@
 import { produce } from 'immer'
 
 import { ActionTypes } from './actions'
+import { CartState } from './types'
 
-export interface Coffee {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  amount: number;
-}
-
-interface CartState {
-  coffees: Coffee[]
-}
 
 export function cartReducer(state: CartState, action: any) {
   switch (action.type) {

@@ -1,10 +1,10 @@
-import { Coffee } from './reducer'
+import { Coffee } from './types'
 
 export enum ActionTypes {
   ADD_COFFEE_CART = 'ADD_COFFEE_CART',
 }
 
-export function addCoffeeCart(newCoffee: Coffee) {
+export function addCoffeeCartAction(newCoffee: Coffee) {
   return {
     type: ActionTypes.ADD_COFFEE_CART,
     payload: {
