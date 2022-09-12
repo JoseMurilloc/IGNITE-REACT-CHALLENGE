@@ -1,6 +1,8 @@
 import styles from './styles.module.css';
 import { Minus, Plus, ShoppingCart } from 'phosphor-react';
 import { formatNumber } from '../../util/formatNumber';
+import { useCart } from '../../hooks/CartContext';
+import { useState } from 'react';
 
 interface Props {
   coffee: {
@@ -13,8 +15,16 @@ interface Props {
 }
 
 export function CardCoffee ({coffee}: Props) {
+  const {addCoffeeCart} = useCart();
+  const [amount, setAmount] = useState(1)
+
+  const decrement = () => setAmount(state => state - 1);
+  const increment = () => setAmount(state => state + 1);
+
+
   function handleAddCoffeeInCart() {
     console.log('Add in reducer context')
+    addCoffeeCart(coffee);
   }
   return (
     <div className={styles.containerCardCoffee}>
@@ -45,11 +55,11 @@ export function CardCoffee ({coffee}: Props) {
         </div>
         <div className={styles.actionsCart}>
           <div className={styles.addonsCoffeeCart}>
-            <button className={styles.buttonMinus}>
+            <button onClick={decrement} className={styles.buttonMinus}>
               <Minus color="#8047F8" size="1.5rem" weight="fill"/>
             </button>
-            <aside className={styles.counter}>1</aside>
-            <button className={styles.buttonPlus}>
+            <aside className={styles.counter}>{amount}</aside>
+            <button onClick={increment} className={styles.buttonPlus}>
               <Plus color="#8047F8" size="1.5rem" weight="fill"/>
             </button>
           </div>
