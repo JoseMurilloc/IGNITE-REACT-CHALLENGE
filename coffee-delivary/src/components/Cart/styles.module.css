@@ -1,7 +1,167 @@
 .containerCartCoffee {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4rem;
+  gap: 2.4rem;
+
+  width: 44.8rem;
+  height: 49.8rem;
+
+  background: #F3F2F2;
+  border-radius: 0.6rem 4.4rem;
+}
+
+.containerCartCoffee main, footer {
+  width: 100%;
+}
+
+.coffee {
+  display: flex;
+  align-content: center;
+  gap: 5rem;
+}
+
+.infoCoffee {
+  display: flex;
+  gap: 1rem;
+  gap: 2rem;
+}
+
+.infoCoffee img {
+  width: 6.4rem;
+}
+
+
+.coffee {
+  width: 100%;
+  display: flex;
+  /* background: red; */
+}
+.detailsCoffee {
+  /* background: #f4e864; */
+  display: flex;
+}
+
+.detailsCoffee .actionsCart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.actionsCart h1 {
+  font-family: 'Roboto';
+  font-size: 1.6rem;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+  color: #403937;
+}
+
+.detailsCoffee .actionsCart .addonsCoffeeCart {
+  display: flex;
+  align-items: center;
+  /* background: rgb(236, 152, 152); */
+}
+
+.actionsCart button {
+  border: none;
+  background: #E6E5E5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+}
+
+.actionsCart .buttonMinus {
+  border-radius: 0.6rem 0 0 0.6rem;
+ }
+
+ .counter {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Roboto';
+  font-size: 1.6rem;
+  line-height: 130%;
+  color: #272221;
+  background: #E6E5E5;
+  height: 100%;
+ }
+
+ .actionsCart .buttonPlus {
+  border-radius: 0 0.6rem 0.6rem 0;
+ }
+
+
+.buttonRemoveCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 0.8rem;
+  margin-left: 0.8rem;
+
+
+  width: 9.1rem;
+  height: 3.2rem;
+
+  background: #E6E5E5;
+  border-radius: 0.6rem;
+  border: 0.1rem solid #E6E5E5;
+
+
+  font-family: 'Roboto';
+  font-size: 1.2rem;
+  line-height: 160%;
+  text-transform: uppercase;
+  color: #574F4D;
 
 }
 
-.infoLine {
+.separator {
+  width: 36.8rem;
+  height: 0rem;
+  border: 0.1rem solid #E6E5E5;
+  margin: 2.4rem 0;
+}
 
+.price {
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+
+  display: flex;
+  align-items: center;
+  text-align: right;
+
+  color: #574F4D;
+}
+
+.confirmOrder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0.8rem;
+  gap: 0.4rem;
+
+  height: 4.6rem;
+  width: 100%;
+
+  background: #DBAC2C;
+  border-radius: 0.6rem;
+  border: 0;
+
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 160%;
+
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+  font-stretch: 100;
 }
