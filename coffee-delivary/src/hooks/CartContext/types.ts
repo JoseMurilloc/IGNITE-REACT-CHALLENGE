@@ -1,7 +1,8 @@
-import React from "react"
+import React, { Dispatch } from "react"
 
 export type CartContextData = {
   coffees: Coffee[]
+  addCoffeeCart: (data: Coffee) => void
 }
 
 export type CartContextProviderProps = {
@@ -13,9 +14,9 @@ export type Cart = {
 }
 
 type Coffee = {
-  id: number;
-  name: string;
-  price: number;
+  types: string[]
+  title: string;
+  description: string;
+  price: number; 
   image: string;
-  amount: number;
 }
