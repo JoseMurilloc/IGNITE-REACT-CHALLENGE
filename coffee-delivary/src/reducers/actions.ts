@@ -3,7 +3,9 @@ import { AddCoffeeCartParams } from "../hooks/CartContext/types";
 
 export enum ActionTypes {
   ADD_COFFEE_CART = 'ADD_COFFEE_CART',
-  REMOVE_COFFEE_CART = 'REMOVE_COFFEE_CART'
+  REMOVE_COFFEE_CART = 'REMOVE_COFFEE_CART',
+  INCREMENT_COFFEE_CART = 'INCREMENT_COFFEE_CART',
+  DECREMENT_COFFEE_CART = 'DECREMENT_COFFEE_CART'
 }
 
 export function addCoffeeCartAction(coffee: CoffeeDTO) {
@@ -18,6 +20,24 @@ export function addCoffeeCartAction(coffee: CoffeeDTO) {
 export function removeCoffeeCartAction(idCoffee: number) {
   return {
     type: ActionTypes.REMOVE_COFFEE_CART,
+    payload: {
+      idCoffee,
+    },
+  }
+}
+
+export function incrementCoffeeCartAction(idCoffee: number) {
+  return {
+    type: ActionTypes.INCREMENT_COFFEE_CART,
+    payload: {
+      idCoffee,
+    },
+  }
+}
+
+export function decrementCoffeeCartAction(idCoffee: number) {
+  return {
+    type: ActionTypes.DECREMENT_COFFEE_CART,
     payload: {
       idCoffee,
     },
