@@ -1,22 +1,20 @@
-import React, { Dispatch } from "react"
+import React from "react"
+import { CoffeeDTO } from "../../dtos/Coffee"
 
-export type CartContextData = {
-  coffees: Coffee[]
-  addCoffeeCart: (data: Coffee) => void
+export interface CartContextData {
+  coffees: CoffeeDTO[];
+  addCoffeeCart: (coffee: CoffeeDTO) => void;
+  removeCoffeeCart: (idCoffee: number) => void;
 }
-
+export type AddCoffeeCartParams = {
+  coffee: CoffeeDTO,
+}
 export type CartContextProviderProps = {
   children: React.ReactNode
 }
 
 export type Cart = {
-  coffees: Coffee[]
+  coffees: CoffeeDTO[]
 }
 
-type Coffee = {
-  types: string[]
-  title: string;
-  description: string;
-  price: number; 
-  image: string;
-}
+
