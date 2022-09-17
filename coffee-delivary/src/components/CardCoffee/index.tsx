@@ -16,14 +16,11 @@ export function CardCoffee ({coffee}: Props) {
   const decrement = () => setAmount(state => state - 1);
   const increment = () => setAmount(state => state + 1);
 
-
-
   function handleAddCoffeeInCart() {
     console.log('Add in reducer context')
-
-
     addCoffeeCart({...coffee, amount});
   }
+
   return (
     <div className={styles.containerCardCoffee}>
       <header>

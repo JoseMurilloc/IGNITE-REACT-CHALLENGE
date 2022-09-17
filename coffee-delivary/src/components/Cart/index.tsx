@@ -6,15 +6,12 @@ import styles from './styles.module.css';
 
 export function Cart () {
 
-  const {coffees,removeCoffeeCart} = useCart()
+  const {coffees,removeCoffeeCart, incrementCoffeeCart, decrementCoffeeCart} = useCart()
   const [deliveryValue, setDeliveryValue] = useState(3)
 
   const totalPrice = useMemo(() =>
     coffees.reduce((sumTotal, coffee) => sumTotal += (coffee.price * coffee.amount), 0)
   , [coffees])
-
-
-
 
   return (
     <div className={styles.containerCartCoffee}>
@@ -28,11 +25,11 @@ export function Cart () {
                 <div className={styles.actionsCart}>
                   <h1>{coffee.title}</h1>
                   <div className={styles.addonsCoffeeCart}>
-                    <button type="button" onClick={() => {}} className={styles.buttonMinus}>
+                    <button type="button" onClick={() => decrementCoffeeCart(coffee.id)} className={styles.buttonMinus}>
                       <Minus color="#8047F8" size="1.5rem" weight="fill"/>
                     </button>
                     <aside className={styles.counter}>{coffee.amount}</aside>
-                    <button type="button" onClick={() => {}} className={styles.buttonPlus}>
+                    <button type="button" onClick={() => incrementCoffeeCart(coffee.id)} className={styles.buttonPlus}>
                       <Plus color="#8047F8" size="1.5rem" weight="fill"/>
                     </button>
                     <button onClick={() => removeCoffeeCart(coffee.id)} type="button" className={styles.buttonRemoveCart}>
