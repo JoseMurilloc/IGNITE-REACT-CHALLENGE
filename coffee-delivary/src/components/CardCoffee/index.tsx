@@ -19,6 +19,7 @@ export function CardCoffee ({coffee}: Props) {
   function handleAddCoffeeInCart() {
     console.log('Add in reducer context')
     addCoffeeCart({...coffee, amount});
+    setAmount(1)
   }
 
   return (
