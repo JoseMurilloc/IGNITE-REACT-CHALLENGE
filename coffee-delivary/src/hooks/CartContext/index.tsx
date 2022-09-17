@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import { CoffeeDTO } from "../../dtos/Coffee";
-import { addCoffeeCartAction, decrementCoffeeCartAction, incrementCoffeeCartAction, removeCoffeeCartAction } from "../../reducers/actions";
+import { addCoffeeCartAction, decrementCoffeeCartAction, incrementCoffeeCartAction, removeCoffeeCartAction, resetCartActions } from "../../reducers/actions";
 import { cartReducer } from "../../reducers/reducer";
 import { CartContextData, CartContextProviderProps } from "./types";
 
@@ -20,8 +20,13 @@ export function CartContextProvider({children}: CartContextProviderProps) {
   function incrementCoffeeCart (idCoffee: number) {
     dispatch(incrementCoffeeCartAction(idCoffee))
   }
+
   function decrementCoffeeCart (idCoffee: number) {
     dispatch(decrementCoffeeCartAction(idCoffee))
+  }
+
+  function resetCart() {
+    dispatch(resetCartActions())
   }
 
   return (
@@ -31,7 +36,8 @@ export function CartContextProvider({children}: CartContextProviderProps) {
         addCoffeeCart,
         removeCoffeeCart,
         incrementCoffeeCart,
-        decrementCoffeeCart
+        decrementCoffeeCart,
+        resetCart
       }}>
       {children}
     </CartContext.Provider>
