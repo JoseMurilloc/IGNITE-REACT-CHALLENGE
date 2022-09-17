@@ -5,6 +5,8 @@ export interface CartContextData {
   coffees: CoffeeDTO[];
   addCoffeeCart: (coffee: CoffeeDTO) => void;
   removeCoffeeCart: (idCoffee: number) => void;
+  incrementCoffeeCart: (idCoffee: number) => void;
+  decrementCoffeeCart: (idCoffee: number) => void;
 }
 export type AddCoffeeCartParams = {
   coffee: CoffeeDTO,
