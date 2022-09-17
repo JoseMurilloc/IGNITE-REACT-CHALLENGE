@@ -3,15 +3,10 @@ import { Minus, Plus, ShoppingCart } from 'phosphor-react';
 import { formatNumber } from '../../util/formatNumber';
 import { useCart } from '../../hooks/CartContext';
 import { useState } from 'react';
+import { CoffeeDTO } from '../../dtos/Coffee';
 
 interface Props {
-  coffee: {
-    types: string[]
-    title: string;
-    description: string;
-    price: number; 
-    image: string;
-  }
+  coffee: CoffeeDTO
 }
 
 export function CardCoffee ({coffee}: Props) {
@@ -22,17 +17,20 @@ export function CardCoffee ({coffee}: Props) {
   const increment = () => setAmount(state => state + 1);
 
 
+
   function handleAddCoffeeInCart() {
     console.log('Add in reducer context')
-    addCoffeeCart(coffee);
+
+
+    addCoffeeCart({...coffee, amount});
   }
   return (
     <div className={styles.containerCardCoffee}>
       <header>
-        <img 
-          className={styles.imageCoffee} 
-          src={coffee.image} 
-          alt="card" 
+        <img
+          className={styles.imageCoffee}
+          src={coffee.image}
+          alt="card"
         />
       </header>
       <section className={styles.shippers}>
@@ -48,7 +46,7 @@ export function CardCoffee ({coffee}: Props) {
       <p className={styles.descriptionCard}>{coffee.description}</p>
 
       <footer>
-        <div>R$ 
+        <div>R$
           <span className={styles.price}>
             {` ${formatNumber(coffee.price)}`}
           </span>
