@@ -6,7 +6,7 @@
   gap: 2.4rem;
 
   width: 44.8rem;
-  height: 49.8rem;
+  min-height: 49.8rem;
 
   background: #F3F2F2;
   border-radius: 0.6rem 4.4rem;
@@ -32,12 +32,12 @@
   width: 6.4rem;
 }
 
-
 .coffee {
   width: 100%;
   display: flex;
   /* background: red; */
 }
+
 .detailsCoffee {
   /* background: #f4e864; */
   display: flex;
@@ -141,7 +141,7 @@
   color: #574F4D;
 }
 
-.confirmOrder {
+.buttonConfirm {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,4 +164,40 @@
 
   color: #FFFFFF;
   font-stretch: 100;
+  margin-top: 2.4rem;
+}
+
+.containerCartCoffee footer {
+  gap: 2.4rem;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footerContent .infoItem span{
+  font-family: 'Roboto';
+  font-size: 1.4rem;
+  line-height: 130%;
+  color: #574F4D;
+}
+
+.footerContent .infoItem span {
+  font-size: 1.6rem;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.total {
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 130%;
+  color: #403937;
 }
