@@ -26,7 +26,6 @@ export function cartReducer(state: CartState, action: any) {
           }
           return coffee
         })
-        console.log(updatedCoffeeToCart)
         return {
           ...state,
           coffees: [...updatedCoffeeToCart]
@@ -34,7 +33,7 @@ export function cartReducer(state: CartState, action: any) {
       }
       case ActionTypes.DECREMENT_COFFEE_CART: {
         const updateCoffeeToCart = state.coffees.map(coffee => {
-          if(coffee.id === action.payload.idCoffee) {
+          if(coffee.amount > 1 && coffee.id === action.payload.idCoffee) {
             return {
               ...coffee,
               amount: coffee.amount - 1
@@ -42,12 +41,17 @@ export function cartReducer(state: CartState, action: any) {
           }
           return coffee
         })
-        console.log(updateCoffeeToCart)
         return {
           ...state,
           coffees: [...updateCoffeeToCart]
         }
 
+      }
+      case ActionTypes.RESET_CART: {
+        return {
+          ...state,
+          coffees: []
+        }
       }
     default:
       return state

@@ -5,7 +5,8 @@ export enum ActionTypes {
   ADD_COFFEE_CART = 'ADD_COFFEE_CART',
   REMOVE_COFFEE_CART = 'REMOVE_COFFEE_CART',
   INCREMENT_COFFEE_CART = 'INCREMENT_COFFEE_CART',
-  DECREMENT_COFFEE_CART = 'DECREMENT_COFFEE_CART'
+  DECREMENT_COFFEE_CART = 'DECREMENT_COFFEE_CART',
+  RESET_CART = 'RESET_CART'
 }
 
 export function addCoffeeCartAction(coffee: CoffeeDTO) {
@@ -41,5 +42,12 @@ export function decrementCoffeeCartAction(idCoffee: number) {
     payload: {
       idCoffee,
     },
+  }
+}
+
+export function resetCartActions() {
+  return {
+    type: ActionTypes.RESET_CART,
+    payload: {},
   }
 }
