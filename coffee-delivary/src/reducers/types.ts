@@ -1,11 +1,5 @@
-export interface Coffee {
-  types: string[]
-  title: string;
-  description: string;
-  price: number; 
-  image: string;
-}
+import { CoffeeDTO } from "../dtos/Coffee";
 
 export interface CartState {
-  coffees: Coffee[]
+  coffees: CoffeeDTO[]
 }
