@@ -1,15 +1,24 @@
 import { FormProvider, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { Cart } from '../../components/Cart';
 import { FormCart } from '../../components/FormCart';
+import { useCart } from '../../hooks/CartContext';
 import styles from './styles.module.css';
 
 export function Checkout () {
 
   const newCartCoffeeForm = useForm()
   const { handleSubmit, register } = newCartCoffeeForm
+  const navigate = useNavigate();
+  const {resetCart, coffees} = useCart();
 
   async function handleConfirmPayment(data: any) {
+    if (coffees.length < 1) {
+      return;
+    }
     console.log(data)
+    navigate('/success')
+    resetCart()
   }
 
   return (
