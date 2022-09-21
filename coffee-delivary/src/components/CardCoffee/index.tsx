@@ -34,7 +34,7 @@ export function CardCoffee ({coffee}: Props) {
       <section className={styles.shippers}>
         {
           coffee.types.map(type => (
-            <div className={styles.shipper}>
+            <div key={type} className={styles.shipper}>
               <span>{type}</span>
             </div>
           ))
