@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectPaymentButton /> Should be have that render buttons styles to state selected correctly 1`] = `
+<body>
+  <div>
+    <button
+      class="containerSelectPaymentButton"
+      type="button"
+    >
+      <svg
+        data-testid="credit-icon"
+        fill="#8047F8"
+        height="2rem"
+        viewBox="0 0 256 256"
+        width="2rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="none"
+          height="256"
+          width="256"
+        />
+        <rect
+          fill="none"
+          height="144"
+          rx="8"
+          stroke="#8047F8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          width="208"
+          x="24"
+          y="56"
+        />
+        <line
+          fill="none"
+          stroke="#8047F8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="168"
+          x2="200"
+          y1="168"
+          y2="168"
+        />
+        <line
+          fill="none"
+          stroke="#8047F8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="120"
+          x2="136"
+          y1="168"
+          y2="168"
+        />
+        <line
+          fill="none"
+          stroke="#8047F8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="24"
+          x2="232"
+          y1="96.9"
+          y2="96.9"
+        />
+      </svg>
+      <span>
+        Cartão de crédito
+      </span>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`<SelectPaymentButton /> Should be have that render buttons styles to state selected correctly 2`] = `
+<body>
+  <div>
+    <button
+      class="containerSelectPaymentButtonSelected"
+      type="button"
+    >
+      <svg
+        fill="#8047F8"
+        height="2rem"
+        viewBox="0 0 256 256"
+        width="2rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="none"
+          height="256"
+          width="256"
+        />
+        <polygon
+          fill="none"
+          points="24 96 232 96 128 32 24 96"
+          stroke="#8047F8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+        />
+        <line
+          fill="none"
+          stroke="#8047F8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="56"
+          x2="56"
+          y1="96"
+          y2="176"
+        />
+        <line
+          fill="none"
+          stroke="#8047F8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="104"
+          x2="104"
+          y1="96"
+          y2="176"
+        />
+        <line
+          fill="none"
+          stroke="#8047F8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="152"
+          x2="152"
+          y1="96"
+          y2="176"
+        />
+        <line
+          fill="none"
+          stroke="#8047F8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="200"
+          x2="200"
+          y1="96"
+          y2="176"
+        />
+        <line
+          fill="none"
+          stroke="#8047F8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="32"
+          x2="224"
+          y1="176"
+          y2="176"
+        />
+        <line
+          fill="none"
+          stroke="#8047F8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+          x1="16"
+          x2="240"
+          y1="208"
+          y2="208"
+        />
+      </svg>
+      <span>
+        Cartão de debito
+      </span>
+    </button>
+  </div>
+</body>
+`;
