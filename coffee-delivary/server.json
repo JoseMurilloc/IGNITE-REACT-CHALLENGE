@@ -4,25 +4,69 @@
       "id": 1,
       "title": "Expresso Tradicional",
       "description": "O tradicional café feito com água quente e grãos moídos",
-      "types": ["Tradicional"],
-      "price": 9.90,
+      "types": [
+        "Tradicional"
+      ],
+      "price": 9.9,
       "image": "https://i.ibb.co/9TMxZvW/Coffee-2.png"
     },
     {
       "id": 2,
       "title": "Expresso Americano",
       "description": "Expresso diluído, menos intenso que o tradicional",
-      "types": ["Tradicional"],
-      "price": 9.90,
+      "types": [
+        "Tradicional"
+      ],
+      "price": 9.9,
       "image": "https://i.ibb.co/Vtgj3Bm/Coffee.png"
     },
     {
       "id": 3,
       "title": "Expresso Cremoso",
       "description": "Café expresso tradicional com espuma cremosa",
-      "types": ["Tradicional"],
-      "price": 9.90,
+      "types": [
+        "Tradicional"
+      ],
+      "price": 9.9,
       "image": "https://i.ibb.co/1JgSvDM/Coffee-1.png"
+    }
+  ],
+  "carts": [
+    {
+      "coffees": [
+        {
+          "id": 1,
+          "title": "Expresso Tradicional",
+          "description": "O tradicional café feito com água quente e grãos moídos",
+          "types": [
+            "Tradicional"
+          ],
+          "price": 9.9,
+          "image": "https://i.ibb.co/9TMxZvW/Coffee-2.png",
+          "amount": 3
+        },
+        {
+          "id": 3,
+          "title": "Expresso Cremoso",
+          "description": "Café expresso tradicional com espuma cremosa",
+          "types": [
+            "Tradicional"
+          ],
+          "price": 9.9,
+          "image": "https://i.ibb.co/1JgSvDM/Coffee-1.png",
+          "amount": 3
+        }
+      ],
+      "infoClient": {
+        "cep": "4484",
+        "street": "Rua Imperial",
+        "number": "45",
+        "complement": "Proxímo da startfit",
+        "district": "Vila Eduado",
+        "city": "Petrolina",
+        "paymentType": "debit"
+      },
+      "id": 1
     }
   ]
 }
