@@ -22,6 +22,8 @@ export function Cart() {
     [coffees],
   )
 
+  const isContainCoffees = coffees.length < 1
+
   return (
     <div className={styles.containerCartCoffee}>
       <main>
@@ -87,7 +89,11 @@ export function Cart() {
             </span>
           </div>
         </div>
-        <button type="submit" className={styles.buttonConfirm}>
+        <button
+          disabled={isContainCoffees}
+          type="submit"
+          className={styles.buttonConfirm}
+        >
           <span>Confirmar Pedido</span>
         </button>
       </footer>

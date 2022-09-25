@@ -139,6 +139,10 @@
   color: #574F4D;
 }
 
+.buttonConfirm:disabled {
+  cursor: not-allowed
+}
+
 .buttonConfirm {
   display: flex;
   justify-content: center;
