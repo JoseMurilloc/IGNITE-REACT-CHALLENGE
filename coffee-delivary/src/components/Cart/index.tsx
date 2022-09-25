@@ -1,4 +1,4 @@
-import { Minus, Plus, ShoppingCart, Trash } from 'phosphor-react'
+import { Minus, Plus, Trash } from 'phosphor-react'
 import { useMemo, useState } from 'react'
 import { useCart } from '../../hooks/CartContext'
 import { formatNumber } from '../../util/formatNumber'
@@ -11,7 +11,7 @@ export function Cart() {
     incrementCoffeeCart,
     decrementCoffeeCart,
   } = useCart()
-  const [deliveryValue, setDeliveryValue] = useState(3)
+  const [deliveryValue] = useState(3)
 
   const totalPrice = useMemo(
     () =>
@@ -87,7 +87,7 @@ export function Cart() {
             </span>
           </div>
         </div>
-        <button className={styles.buttonConfirm}>
+        <button type="submit" className={styles.buttonConfirm}>
           <span>Confirmar Pedido</span>
         </button>
       </footer>
