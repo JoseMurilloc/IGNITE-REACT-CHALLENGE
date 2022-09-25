@@ -5,22 +5,34 @@ import { z } from 'zod'
 import { Cart } from '../../components/Cart'
 import { FormCart } from '../../components/FormCart'
 import { useCart } from '../../hooks/CartContext'
+import { CoffeeService } from '../../services/Coffee'
 
 import styles from './styles.module.css'
 
 const buyCartCoffeeSchema = z.string()
 
+interface ClientFormData {
+  cep: string
+  city: string
+  complement: string
+  district: string
+  number: string
+  paymentType: string
+  street: string
+}
+
 export function Checkout() {
   const newCartCoffeeForm = useForm()
-  const { handleSubmit, register } = newCartCoffeeForm
+  const { handleSubmit } = newCartCoffeeForm
   const navigate = useNavigate()
   const { resetCart, coffees } = useCart()
 
-  async function handleConfirmPayment(data: any): Promise<void> {
-    if (coffees.length < 1) {
-      return
-    }
-    console.log(data)
+  async function handleConfirmPayment(data: ClientFormData): Promise<void> {
+    await CoffeeService.createBuyCoffee({
+      coffees,
+      infoClient: data,
+    })
+
     navigate('/success')
     resetCart()
   }
