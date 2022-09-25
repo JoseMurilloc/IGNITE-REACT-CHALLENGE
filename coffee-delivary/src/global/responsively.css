@@ -10,7 +10,8 @@
   }
 }
 
-@media(min-width: 1200px){
+
+@media(min-width: 1400px){
   html {
     font-size: 62.5%;
   }

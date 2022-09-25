@@ -1,12 +1,11 @@
-import { CoffeeDTO } from "../dtos/Coffee";
-import { AddCoffeeCartParams } from "../hooks/CartContext/types";
+import { CoffeeDTO } from '../dtos/Coffee'
 
 export enum ActionTypes {
   ADD_COFFEE_CART = 'ADD_COFFEE_CART',
   REMOVE_COFFEE_CART = 'REMOVE_COFFEE_CART',
   INCREMENT_COFFEE_CART = 'INCREMENT_COFFEE_CART',
   DECREMENT_COFFEE_CART = 'DECREMENT_COFFEE_CART',
-  RESET_CART = 'RESET_CART'
+  RESET_CART = 'RESET_CART',
 }
 
 export function addCoffeeCartAction(coffee: CoffeeDTO) {

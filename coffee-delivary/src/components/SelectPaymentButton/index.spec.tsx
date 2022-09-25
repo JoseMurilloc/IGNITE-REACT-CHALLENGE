@@ -7,7 +7,7 @@ describe('<SelectPaymentButton />', () => {
     const props = {
       label: 'Cartão de crédito',
       typePayment: 'credit' as MethodsPayment,
-      selected: false
+      selected: false,
     }
     render(<SelectPaymentButton {...props} />)
 
@@ -19,7 +19,7 @@ describe('<SelectPaymentButton />', () => {
     const props = {
       label: 'Cartão de crédito',
       typePayment: 'credit' as MethodsPayment,
-      selected: false
+      selected: false,
     }
     const { container } = render(<SelectPaymentButton {...props} />)
 
@@ -30,11 +30,10 @@ describe('<SelectPaymentButton />', () => {
     const props = {
       label: 'Cartão de debito',
       typePayment: 'debit' as MethodsPayment,
-      selected: true
+      selected: true,
     }
-   const { container } = render(<SelectPaymentButton {...props} />)
+    const { container } = render(<SelectPaymentButton {...props} />)
 
-   expect(container.parentElement).toMatchSnapshot()
-
+    expect(container.parentElement).toMatchSnapshot()
   })
 })

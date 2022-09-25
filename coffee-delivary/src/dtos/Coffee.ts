@@ -1,9 +1,9 @@
 export type CoffeeDTO = {
-  id: number;
+  id: number
   types: string[]
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-  amount: number;
+  title: string
+  description: string
+  price: number
+  image: string
+  amount: number
 }

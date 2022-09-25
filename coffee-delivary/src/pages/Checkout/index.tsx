@@ -1,20 +1,24 @@
-import { FormProvider, useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
-import { Cart } from '../../components/Cart';
-import { FormCart } from '../../components/FormCart';
-import { useCart } from '../../hooks/CartContext';
-import styles from './styles.module.css';
+import { FormProvider, useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import { z } from 'zod'
 
-export function Checkout () {
+import { Cart } from '../../components/Cart'
+import { FormCart } from '../../components/FormCart'
+import { useCart } from '../../hooks/CartContext'
 
+import styles from './styles.module.css'
+
+const buyCartCoffeeSchema = z.string()
+
+export function Checkout() {
   const newCartCoffeeForm = useForm()
   const { handleSubmit, register } = newCartCoffeeForm
-  const navigate = useNavigate();
-  const {resetCart, coffees} = useCart();
+  const navigate = useNavigate()
+  const { resetCart, coffees } = useCart()
 
-  async function handleConfirmPayment(data: any) {
+  async function handleConfirmPayment(data: any): Promise<void> {
     if (coffees.length < 1) {
-      return;
+      return
     }
     console.log(data)
     navigate('/success')
@@ -36,5 +40,5 @@ export function Checkout () {
         </section>
       </form>
     </main>
-  );
+  )
 }
