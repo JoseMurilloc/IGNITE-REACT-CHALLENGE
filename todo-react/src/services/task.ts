@@ -41,13 +41,12 @@ export class TaskService {
 
   static async deleteTask(taskId: number) {
     try {
-      const response = await fetch(`http://localhost:3333/tasks/${taskId}`, {
+      await fetch(`http://localhost:3333/tasks/${taskId}`, {
         headers: {
           'Content-Type': 'application/json',
         },
         method: 'DELETE',
       })
-      const json = await response.json()
 
       return {
         status: true,
