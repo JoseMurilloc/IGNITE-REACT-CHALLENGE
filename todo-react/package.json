@@ -8,7 +8,9 @@
     "preview": "vite preview",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "lint": "eslint src --ext .tsx,.ts --fix"
+    "lint": "eslint src --ext .tsx,.ts --fix",
+    "server:delay": "yarn json-server ./server.json -p 3333 -d 1000",
+    "server": "yarn json-server ./server.json -p 3333"
   },
   "dependencies": {
     "json-server": "^0.17.0",
