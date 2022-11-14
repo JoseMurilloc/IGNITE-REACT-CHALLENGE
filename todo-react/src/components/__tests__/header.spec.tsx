@@ -4,14 +4,14 @@ import userEvent from '@testing-library/user-event'
 
 describe('<Header />', () => {
   it('Render component correctly', () => {
-    render(<Header onTasks={jest.fn} />)
+    render(<Header />)
     expect(
       screen.getByPlaceholderText('Adicionar uma nova tarefa'),
     ).toBeInTheDocument()
   })
 
   it('should it is with search input clear after the click button create', async () => {
-    render(<Header onTasks={jest.fn} />)
+    render(<Header />)
     const inputSearch = screen.getByRole('textbox')
     userEvent.type(inputSearch, 'New task of todo')
 
@@ -24,7 +24,7 @@ describe('<Header />', () => {
   })
 
   it('should be have not permitted submit create new tudo with input clear', async () => {
-    render(<Header onTasks={jest.fn} />)
+    render(<Header />)
 
     const buttonCreateTODO = screen.getByRole('button')
     await userEvent.click(buttonCreateTODO)

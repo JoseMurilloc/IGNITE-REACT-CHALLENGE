@@ -1,15 +1,16 @@
-import { Dispatch, SetStateAction, useState } from 'react'
+import { useState } from 'react'
 import styles from '../styles/components/header.module.css'
 import logoImage from '../assets/logo.svg'
 import { PlusCircle } from 'phosphor-react'
-import { Task } from '../pages/App'
 import { TaskService } from '../services/task'
+import { addTasksAction } from '../reducer/tasks/actions'
+import { useTask } from '../contexts/task'
 
-type Props = {
-  onTasks: Dispatch<SetStateAction<Task[]>>
-}
+type Props = {}
 
-export function Header({ onTasks }: Props) {
+export function Header(props: Props) {
+  const { dispatch } = useTask()
+
   const [title, setTitle] = useState('')
   const [isSubmit, setIsSubmit] = useState(false)
   const [error, setError] = useState('')
@@ -27,7 +28,7 @@ export function Header({ onTasks }: Props) {
       return
     }
 
-    onTasks((oldTasks: Task[]) => [...oldTasks, newTask])
+    dispatch(addTasksAction(newTask))
     setTitle('')
     setIsSubmit(false)
   }
