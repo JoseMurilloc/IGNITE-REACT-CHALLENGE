@@ -3,26 +3,18 @@ import { useEffect, useMemo, useState } from 'react'
 import { CardTask } from '../components/CardTask'
 import { Empty } from '../components/Empty'
 import { Header } from '../components/Header'
+import { useTask } from '../contexts/task'
+import { setTasksAction } from '../reducer/tasks/actions'
 import { TaskService } from '../services/task'
 import styles from '../styles/pages/app.module.css'
 
-export type Task = {
-  id: number
-  complete: boolean
-  title: string
-}
-
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([])
+  const { tasks, dispatch } = useTask()
+
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    const mounted = true
     fetchingAllTasks()
-
-    return () => {
-      mounted: false
-    }
   }, [])
 
   const tasksComplete = useMemo(
@@ -32,21 +24,21 @@ function App() {
 
   const fetchingAllTasks = async () => {
     setLoading(true)
-    const response = await TaskService.getTasks()
+    const { status, tasks } = await TaskService.getTasks()
 
-    if (!response.status) {
+    if (!status) {
       setLoading(false)
       return
     }
 
-    setTasks(response.tasks)
+    dispatch(setTasksAction(tasks))
     setLoading(false)
   }
 
   if (loading) {
     return (
       <div className={styles.container}>
-        <Header onTasks={setTasks} />
+        <Header />
 
         <section className={styles.loader}>
           <Spinner color="#89adc3" size="2rem" />
@@ -58,7 +50,7 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <Header onTasks={setTasks} />
+      <Header />
       <main className={styles.main}>
         <section className={styles.info}>
           <aside className={styles.infoTask}>
@@ -82,7 +74,7 @@ function App() {
 
         <div className={styles.listTasks}>
           {tasks.map((task) => (
-            <CardTask key={task.id} task={task} onTasks={setTasks} />
+            <CardTask key={task.id} task={task} />
           ))}
         </div>
       </main>
