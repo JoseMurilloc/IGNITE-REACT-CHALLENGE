@@ -46,6 +46,10 @@
   color: whitesmoke;
 }
 
+.inputSearchError::placeholder { 
+  color: #cb4848;
+}
+
 .contentInput button {
   border: none;
   background-color: #1E6F9F;
