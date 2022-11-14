@@ -31,7 +31,7 @@
 }
 .inputSearch:focus {
   outline: 0;
-  box-shadow: 0 0 0 2px #8284fa;
+  box-shadow: 0 0 0 1px #8284fa;
 }
 
 
@@ -48,6 +48,11 @@
 
 .inputSearchError::placeholder { 
   color: #cb4848;
+}
+
+.inputSearchError:focus {
+  outline: 0;
+  box-shadow: 0 0 0 1px #cb4848;
 }
 
 .contentInput button {
