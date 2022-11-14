@@ -11,26 +11,33 @@ type Props = {}
 export function Header(props: Props) {
   const { dispatch } = useTask()
 
-  const [title, setTitle] = useState('')
+  const [inputSearchTitle, setInputSearchTitle] = useState('')
   const [isSubmit, setIsSubmit] = useState(false)
   const [error, setError] = useState('')
 
   const handleCreateNewTask = async () => {
-    if (!title) {
-      setError('Campo obrigatório')
+    if (!inputSearchTitle) {
+      setError('Campo obrigatório *')
       return
     }
     setIsSubmit(true)
     setError('')
-    const { status, newTask } = await TaskService.createNewTask(title)
+    const { status, newTask } = await TaskService.createNewTask(
+      inputSearchTitle,
+    )
 
     if (!status) {
       return
     }
 
     dispatch(addTasksAction(newTask))
-    setTitle('')
+    setInputSearchTitle('')
     setIsSubmit(false)
+  }
+
+  const handleChangeSearchValue = (title: string) => {
+    setError('')
+    setInputSearchTitle(title)
   }
 
   return (
@@ -41,8 +48,8 @@ export function Header(props: Props) {
           className={!error ? styles.inputSearch : styles.inputSearchError}
           type="text"
           placeholder={!error ? 'Adicionar uma nova tarefa' : error}
-          onChange={(e) => setTitle(e.target.value)}
-          value={title}
+          onChange={(e) => handleChangeSearchValue(e.target.value)}
+          value={inputSearchTitle}
         />
         <button onClick={handleCreateNewTask} disabled={isSubmit}>
           Criar
