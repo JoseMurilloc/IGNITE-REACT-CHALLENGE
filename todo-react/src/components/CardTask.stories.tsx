@@ -36,3 +36,12 @@ Default.args = {
     title: 'Aprender React Native',
   },
 }
+
+export const CompleteTask = Template.bind({})
+CompleteTask.args = {
+  task: {
+    id: 1,
+    complete: true,
+    title: 'Aprender React Native',
+  },
+}
