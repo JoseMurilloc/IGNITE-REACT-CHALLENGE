@@ -37,15 +37,13 @@ export function CardTask({ task }: Props) {
 
   return (
     <div className={styles.container}>
-      {task.complete ? (
-        <button onClick={() => handleCompleteTask(task.id)}>
+      <button onClick={() => handleCompleteTask(task.id)}>
+        {task.complete ? (
           <CheckCircle color="#4EA8DE" size="2rem" />
-        </button>
-      ) : (
-        <button onClick={() => handleCompleteTask(task.id)}>
+        ) : (
           <Circle color="#4EA8DE" size="2rem" />
-        </button>
-      )}
+        )}
+      </button>
       <div>
         <span>{task.title}</span>
       </div>
