@@ -1,5 +1,5 @@
 import { Spinner } from 'phosphor-react'
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { CardTask } from '../components/CardTask'
 import { Empty } from '../components/Empty'
 import { Header } from '../components/Header'
@@ -13,16 +13,12 @@ function App() {
 
   const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    fetchingAllTasks()
-  }, [])
-
   const tasksComplete = useMemo(
     () => tasks.filter((task) => task.complete).length,
     [tasks],
   )
 
-  const fetchingAllTasks = async () => {
+  const fetchingAllTasks = useCallback(async () => {
     setLoading(true)
     const { status, tasks } = await TaskService.getTasks()
 
@@ -33,7 +29,11 @@ function App() {
 
     dispatch(setTasksAction(tasks))
     setLoading(false)
-  }
+  }, [dispatch])
+
+  useEffect(() => {
+    fetchingAllTasks()
+  }, [fetchingAllTasks])
 
   if (loading) {
     return (
