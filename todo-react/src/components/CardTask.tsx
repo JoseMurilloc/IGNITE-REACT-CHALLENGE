@@ -1,7 +1,7 @@
 import styles from '../styles/components/cardTask.module.css'
 import { Trash, Circle, CheckCircle } from 'phosphor-react'
 import { TaskService } from '../services/task'
-import { removeTaskAction, updateTasksAction } from '../reducer/tasks/actions'
+import { updateTasksAction } from '../reducer/tasks/actions'
 import { Task } from '../reducer/tasks/types'
 import { useTask } from '../contexts/task'
 
@@ -10,7 +10,7 @@ type Props = {
 }
 
 export function CardTask({ task }: Props) {
-  const { dispatch } = useTask()
+  const { dispatch, removeTask } = useTask()
 
   const handleDeleteTask = async (taskId: number) => {
     const { status } = await TaskService.deleteTask(taskId)
@@ -19,7 +19,7 @@ export function CardTask({ task }: Props) {
       return
     }
 
-    dispatch(removeTaskAction(task.id))
+    removeTask(task.id)
   }
 
   const handleCompleteTask = async (taskId: number) => {

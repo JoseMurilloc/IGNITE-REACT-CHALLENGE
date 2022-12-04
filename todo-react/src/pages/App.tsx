@@ -1,16 +1,17 @@
 import { Spinner } from 'phosphor-react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+
 import { CardTask } from '../components/CardTask'
 import { Empty } from '../components/Empty'
 import { Header } from '../components/Header'
 import { useTask } from '../contexts/task'
 import { setTasksAction } from '../reducer/tasks/actions'
+
 import { TaskService } from '../services/task'
 import styles from '../styles/pages/app.module.css'
 
 function App() {
   const { tasks, dispatch } = useTask()
-
   const [loading, setLoading] = useState(false)
 
   const tasksComplete = useMemo(
