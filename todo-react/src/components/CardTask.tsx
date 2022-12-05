@@ -1,4 +1,3 @@
-import styles from '../styles/components/cardTask.module.css'
 import { Trash, Circle, CheckCircle } from 'phosphor-react'
 import { TaskService } from '../services/task'
 import { updateTasksAction } from '../reducer/tasks/actions'
@@ -36,16 +35,18 @@ export function CardTask({ task }: Props) {
   }
 
   return (
-    <div className={styles.container}>
-      <button onClick={() => handleCompleteTask(task.id)}>
-        {task.complete ? (
-          <CheckCircle color="#4EA8DE" size="2rem" />
-        ) : (
-          <Circle color="#4EA8DE" size="2rem" />
-        )}
-      </button>
-      <div>
-        <span>{task.title}</span>
+    <div
+      className={`w-full bg-zinc-800	flex py-8 px-6 rounded-xl justify-between shadow-2xl`}
+    >
+      <div className="w-3/4 flex items-center gap-3">
+        <button onClick={() => handleCompleteTask(task.id)}>
+          {task.complete ? (
+            <CheckCircle color="#4EA8DE" size="2rem" />
+          ) : (
+            <Circle color="#4EA8DE" size="2rem" />
+          )}
+        </button>
+        <span className="text-xl">{task.title}</span>
       </div>
       <button onClick={() => handleDeleteTask(task.id)}>
         <Trash color="#808080" size="2rem" />
