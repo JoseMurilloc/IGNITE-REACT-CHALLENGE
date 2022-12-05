@@ -1,3 +1,19 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "title": "Vite",
+      "complete": true,
+      "id": 15
+    },
+    {
+      "title": "React JS",
+      "complete": true,
+      "id": 17
+    },
+    {
+      "title": "Typescript",
+      "complete": true,
+      "id": 18
+    }
+  ]
 }
