@@ -11,5 +11,3 @@ export type TabBottomContextProps = {
 export type TabBottomProviderProps = {
 	children: ReactNode;
 };
-
-// StyleAnimated: {transform: Array<Record<string, number>>};
