@@ -4,10 +4,9 @@
 </h1>
 
 <p align="center">
-  <video width="180" height="400" controls>
-    <source src="https://user-images.githubusercontent.com/43470555/212552144-e820e81c-2329-4fb2-9d89-d840dafd31eb.mp4" type="video/mp4">
-  </video>
+  <img src="./.github/video.gif" width="180" height="400" />
 </p>
+
 
 ## Sobre 📖
 Este projeto tem como objetivo reproduzir a animação da Barra de Abas do aplicativo do [LinkedIn](https://apps.apple.com/us/app/id288429040), utilizando recursos de animação avançados e contexto para criar uma animação atraente. 😍
