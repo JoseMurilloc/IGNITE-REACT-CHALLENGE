@@ -19,8 +19,8 @@ export function AppTabsRoutes() {
 		<Tab.Navigator
 			screenOptions={{
 				headerShown: false,
-				tabBarActiveTintColor: theme.colors.primary,
-				tabBarInactiveTintColor: theme.colors.gray,
+				tabBarActiveTintColor: theme.colors.dark,
+				tabBarInactiveTintColor: theme.colors.inactive,
 				tabBarStyle: {position: 'absolute', bottom: 0},
 			}}
 			tabBar={props => (
@@ -30,11 +30,11 @@ export function AppTabsRoutes() {
 			)}
 		>
 			<Tab.Screen
-				name='Home'
+				name='Início'
 				component={Home}
 				options={{
-					tabBarIcon: () => (
-						<Phosphor.House color='#333' size={24} weight='fill' />
+					tabBarIcon: ({color}) => (
+						<Phosphor.House color={color} size={24} weight='fill' />
 					),
 				}}
 			/>
@@ -42,8 +42,8 @@ export function AppTabsRoutes() {
 				name='Setting'
 				component={Setting}
 				options={{
-					tabBarIcon: () => (
-						<Phosphor.Users color='#333' size={24} weight='fill' />
+					tabBarIcon: ({color}) => (
+						<Phosphor.Users color={color} size={24} weight='fill' />
 					),
 				}}
 			/>
@@ -51,8 +51,8 @@ export function AppTabsRoutes() {
 				name='Post'
 				component={Post}
 				options={{
-					tabBarIcon: () => (
-						<Phosphor.PlusCircle color='#333' size={24} weight='fill' />
+					tabBarIcon: ({color}) => (
+						<Phosphor.PlusCircle color={color} size={24} weight='fill' />
 					),
 				}}
 			/>
@@ -60,8 +60,8 @@ export function AppTabsRoutes() {
 				name='Notification'
 				component={Notification}
 				options={{
-					tabBarIcon: () => (
-						<Phosphor.Bell color='#333' size={24} weight='fill' />
+					tabBarIcon: ({color}) => (
+						<Phosphor.Bell color={color} size={24} weight='fill' />
 					),
 				}}
 			/>
@@ -69,8 +69,8 @@ export function AppTabsRoutes() {
 				name='Jobs'
 				component={Job}
 				options={{
-					tabBarIcon: () => (
-						<Phosphor.Bag color='#333' size={24} weight='fill' />
+					tabBarIcon: ({color}) => (
+						<Phosphor.Bag color={color} size={24} weight='fill' />
 					),
 				}}
 			/>
