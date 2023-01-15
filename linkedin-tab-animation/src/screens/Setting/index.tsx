@@ -2,10 +2,11 @@ import React, {useCallback} from 'react';
 import {
 	type NativeScrollEvent,
 	type NativeSyntheticEvent,
-	ScrollView, StatusBar, Text,
+	ScrollView, Text,
 } from 'react-native';
-import {Lorem} from '../components/Lorem';
-import {useTabBottom} from '../hooks/useTabBottom';
+import {useTabBottom} from '../../hooks/useTabBottom';
+
+import * as S from './styles';
 
 export function Setting() {
 	const {toggleVisibleTab} = useTabBottom();
@@ -15,17 +16,10 @@ export function Setting() {
 	}, [toggleVisibleTab]);
 
 	return (
-		<>
-			<StatusBar
-				barStyle='dark-content'
-				backgroundColor='transparent'
-				translucent
-			/>
-
-			<ScrollView onScroll={onScroll}>
-				<Text>Setting</Text>
-				<Lorem />
-			</ScrollView>
-		</>
+		<ScrollView onScroll={onScroll}>
+			<S.SpaceOcupe>
+				<S.PageName>Setting</S.PageName>
+			</S.SpaceOcupe>
+		</ScrollView>
 	);
 }

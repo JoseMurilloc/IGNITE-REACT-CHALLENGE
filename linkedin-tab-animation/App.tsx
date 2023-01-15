@@ -1,15 +1,16 @@
 import React from 'react';
-import {TabBottomProvider} from './src/hooks/useTabBottom';
-import {Routes} from './src/routes';
+import {StatusBar} from 'react-native';
+import {ThemeProvider} from 'styled-components/native';
 import {useFonts} from 'expo-font';
 
 import InterRegular from './src/assets/fonts/Inter-Regular.ttf';
 import InterMedium from './src/assets/fonts/Inter-Medium.ttf';
 import InterSemiBold from './src/assets/fonts/Inter-SemiBold.ttf';
 import InterBlack from './src/assets/fonts/Inter-Black.ttf';
-import {ThemeProvider} from 'styled-components/native';
+
+import {Routes} from './src/routes';
 import {theme} from './src/styles/theme';
-import {StatusBar} from 'react-native';
+import {TabBottomProvider} from './src/hooks/useTabBottom';
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -27,7 +28,7 @@ export default function App() {
 		<ThemeProvider theme={theme}>
 			<TabBottomProvider>
 				<StatusBar
-					barStyle='light-content'
+					barStyle='dark-content'
 					backgroundColor='transparent'
 					translucent
 				/>

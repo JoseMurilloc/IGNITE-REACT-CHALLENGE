@@ -6,8 +6,7 @@ import Animated from 'react-native-reanimated';
 import {BottomTabBar, createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useTabBottom} from '../hooks/useTabBottom';
 
-import {Setting} from '../screens/Setting';
-import {Home} from '../screens/Home';
+import {Setting, Home, Notification, Job, Post} from '../screens';
 import {useTheme} from 'styled-components';
 
 const Tab = createBottomTabNavigator();
@@ -50,7 +49,7 @@ export function AppTabsRoutes() {
 			/>
 			<Tab.Screen
 				name='Post'
-				component={Home}
+				component={Post}
 				options={{
 					tabBarIcon: () => (
 						<Phosphor.PlusCircle color='#333' size={24} weight='fill' />
@@ -59,7 +58,7 @@ export function AppTabsRoutes() {
 			/>
 			<Tab.Screen
 				name='Notification'
-				component={Home}
+				component={Notification}
 				options={{
 					tabBarIcon: () => (
 						<Phosphor.Bell color='#333' size={24} weight='fill' />
@@ -68,7 +67,7 @@ export function AppTabsRoutes() {
 			/>
 			<Tab.Screen
 				name='Jobs'
-				component={Home}
+				component={Job}
 				options={{
 					tabBarIcon: () => (
 						<Phosphor.Bag color='#333' size={24} weight='fill' />

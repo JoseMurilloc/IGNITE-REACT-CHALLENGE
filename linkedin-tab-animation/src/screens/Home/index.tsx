@@ -1,5 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import {
+	StatusBar,
 	type NativeScrollEvent,
 	type NativeSyntheticEvent,
 } from 'react-native';
@@ -21,21 +22,27 @@ export function Home() {
 	}, [toggleVisibleTab]);
 
 	return (
-		<S.ContainerHome>
-			<S.ScrollHome onScroll={onScroll}>
-				<Header />
-				<S.Section>
-					<S.Title>Competências</S.Title>
-					<S.Skills>
-						<Skill name='Typescript' />
-						<Skill name='Redux' />
-						<Skill name='React Native' />
-						<Skill name='Git' />
-					</S.Skills>
-				</S.Section>
-				<S.Section>
-					<S.Title>Sobre</S.Title>
-					<S.AboutMe>
+		<>
+			<StatusBar
+				barStyle='light-content'
+				backgroundColor='transparent'
+				translucent
+			/>
+			<S.ContainerHome>
+				<S.ScrollHome onScroll={onScroll}>
+					<Header />
+					<S.Section>
+						<S.Title>Competências</S.Title>
+						<S.Skills>
+							<Skill name='Typescript' />
+							<Skill name='Redux' />
+							<Skill name='React Native' />
+							<Skill name='Git' />
+						</S.Skills>
+					</S.Section>
+					<S.Section>
+						<S.Title>Sobre</S.Title>
+						<S.AboutMe>
             👋 Olá, meu nome é José Murillo tenho 24 anos, atualmente estou graduando em
             Ciência da Computação e trabalhando como desenvolvedor Front-End Júnior.{'\n\n'}
 
@@ -47,35 +54,36 @@ export function Home() {
             melhores interfaces, tendo como base os estudos e práticas recorrentes com as seguintes tecnologias:{'\n\n'}
             - ReactJs {'\n'}
             - React Native
-						{'\n\n'}
+							{'\n\n'}
             Para ver um pouco do que eu já fiz/produzi no mundo do desenvolvimento, convido você ir da uma olhada
             no meu GitHub. https://github.com/JoseMurilloc
-					</S.AboutMe>
-				</S.Section>
-				<S.Section>
-					<S.Title>Licenças e certificados</S.Title>
-					<S.Certificates>
-						<Certificate
-							title='Trilha ReactJS'
-							educationalInstitution='Rocketseat'
-							dateEmit='Verificação emitida em jun de 2021'
-							image='https://avatars.githubusercontent.com/u/28929274?s=280&v=4'
-						/>
-						<Certificate
-							title='Trilha ReactJS'
-							educationalInstitution='Rocketseat'
-							dateEmit='Verificação emitida em jun de 2021'
-							image='https://avatars.githubusercontent.com/u/28929274?s=280&v=4'
-						/>
-						<Certificate
-							title='Trilha ReactJS'
-							educationalInstitution='Rocketseat'
-							dateEmit='Verificação emitida em jun de 2021'
-							image='https://avatars.githubusercontent.com/u/28929274?s=280&v=4'
-						/>
-					</S.Certificates>
-				</S.Section>
-			</S.ScrollHome>
-		</S.ContainerHome>
+						</S.AboutMe>
+					</S.Section>
+					<S.Section>
+						<S.Title>Licenças e certificados</S.Title>
+						<S.Certificates>
+							<Certificate
+								title='Trilha ReactJS'
+								educationalInstitution='Rocketseat'
+								dateEmit='Verificação emitida em jun de 2021'
+								image='https://avatars.githubusercontent.com/u/28929274?s=280&v=4'
+							/>
+							<Certificate
+								title='Trilha ReactJS'
+								educationalInstitution='Rocketseat'
+								dateEmit='Verificação emitida em jun de 2021'
+								image='https://avatars.githubusercontent.com/u/28929274?s=280&v=4'
+							/>
+							<Certificate
+								title='Trilha ReactJS'
+								educationalInstitution='Rocketseat'
+								dateEmit='Verificação emitida em jun de 2021'
+								image='https://avatars.githubusercontent.com/u/28929274?s=280&v=4'
+							/>
+						</S.Certificates>
+					</S.Section>
+				</S.ScrollHome>
+			</S.ContainerHome>
+		</>
 	);
 }
